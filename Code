@@ -1,0 +1,80 @@
+
+int led1 = D6; 
+int led2 = D7; 
+
+void setup() {
+    //set up output LEDa
+
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+
+}
+
+
+//the following loop runs a morse code for my name SARAH: *** *- *-* *- ****
+
+void loop()
+{
+    S();
+    delay(1500);
+    A(); 
+    delay(1500);
+    R();
+    delay(1500);
+    A();
+    delay(1500);
+    H();
+    delay(3500);
+}
+//code for dot *
+void dot()
+{
+        digitalWrite(led1, HIGH);
+        digitalWrite(led2, HIGH);
+        delay(200);
+        digitalWrite(led1, LOW);
+        digitalWrite(led2, LOW);
+}
+//code for dash -
+void dash()
+{
+     digitalWrite(led1, HIGH);
+        digitalWrite(led2, HIGH);
+        delay(1000);
+        digitalWrite(led1, LOW);
+        digitalWrite(led2, LOW);
+}
+void S()
+{
+    //code for letter S in morse: ***
+  
+        dot();
+           dot();
+        dot();
+
+    //short blink three times
+    
+}
+void A()
+{
+    //code for letter A: *-
+    dot();
+    dash();
+}
+void R()
+{
+    //code for letter R: *-*
+    dot();
+    dash();
+    dot();
+}
+void H()
+{
+    //code for letter H: ****
+    for(int i=1; i<=4; i++)
+    {
+        dot();
+    }
+    //code for letter H
+}
+
